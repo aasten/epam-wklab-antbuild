@@ -26,4 +26,4 @@ Artifact can be got by invoking maven with `assembly:single` goal.
 
 Use `build.xml` within obtained zipped artifact.
 
-Use provided `sample-in` folder to populate required by task `in` folder with sample files.
+Use provided `sample_in` folder to populate required by task `in` folder with sample files.
