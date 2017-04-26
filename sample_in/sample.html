@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><link rel="canonical" href="https://msdn.microsoft.com/en-us/library/ms762271%28v=vs.85%29.aspx">
+    <title>Sample XML File (books.xml)</title>
+
+
+
+
+
+
+
+<meta name="DCS.dcsuri" content="/en-us/library/ms762271(d=default,l=en-us,v=vs.85).aspx">
+
+<meta name="NormalizedUrl" content="https://msdn.microsoft.com/en-us/library/ms762271(d=default,l=en-us,v=vs.85).aspx">
+
+<meta name="ms.normalizedurl" content="https://msdn.microsoft.com/en-us/library/ms762271(d=default,l=en-us,v=vs.85).aspx">
+
+<meta name="ms.prod" content="windows-8.1">
+
+<meta name="ms.devlang" content="na">
+
+<meta name="ms.topic" content="article">
+
+<meta name="AmbientContext" content="{&quot;layout.limit_max_width&quot;:false,&quot;AmbientContextId&quot;:&quot;DABDEA7D-4F24-4AD3-9081-E3A4BDB73F3E&quot;,&quot;display.use_large_font&quot;:false,&quot;insight.perf_timing&quot;:true,&quot;AmbientContextDownstream&quot;:{&quot;LogTrace&quot;:false},&quot;display.high_contrast&quot;:false,&quot;insight.use_wedcs_vnext&quot;:true}">
+
+<meta name="VotingContextUrl" content="https://msdn.microsoft.com/en-us/library/ms762271(d=default,l=en-us,v=vs.85).aspx">
+
+<meta name="MN" content="FB361395-10:51:23 PM">
+
+<meta name="Search.ShortId" content="ms762271">
+
+<meta name="ms.shortidmsdn" content="ms762271">
+
+<meta name="ms.locale" content="en-us">
+
+<meta name="ms.prodver" content="VS.85">
+
+<meta name="ms.contentlang" content="EN">
+
+<meta name="ms.lang" content="EN">
+
+<meta name="ms.loc" content="US">
+
+<meta name="ms.sitever" content="2017.04.11.2">
+
+<meta name="ms.assetid" content="967ffc8d-a7f3-4630-ae77-ad87588cd400">
+
+<meta name="ms.auth" content="0">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+        
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript" data-do-not-move="true">
+        //<![CDATA[
+        var AmbientContext = null;
+
+        (function(){
+            var root = (function(){return this;}).call(null);
+
+            var GetCookie = function(name){
+                var cookies = root.document.cookie ? root.document.cookie.split('; ') : [];
+                for (var i = 0; i < cookies.length; i++) {
+                    var pos = cookies[i].indexOf('=');
+                    if (name === root.decodeURIComponent(cookies[i].slice(0, pos)))
+                    {
+                        var cookie = cookies[i].slice(pos + 1).replace(/\+/g, ' ');
+                        cookie = root.decodeURIComponent(cookie);
+                        return cookie;
+                    }
+                }
+            };
+
+            var JsonDeserialize = function(content) {
+                return root.JSON && root.JSON.parse ? root.JSON.parse(content) : (new Function('return (' + content + ')'))();
+            };
+
+            try {
+                AmbientContext = GetCookie('AmbientContext');
+                AmbientContext = AmbientContext && JsonDeserialize(AmbientContext);
+            } catch(ex) {
+            } finally {
+                AmbientContext = AmbientContext || null;
+            }
+        })();
+        //]]>
+    </script>
+
+    <script type="text/javascript" src="sample_files/jquery-1.js" data-do-not-move="true" data-provides="jQuery"></script>
+    
+<link rel="stylesheet" type="text/css" href="sample_files/Combined.css"><script class="mtps-injected">try {
+/**/
+(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { 
+	"image": "https://i-msdn.sec.s-msft.com", 
+	"js": "https://i2-msdn.sec.s-msft.com", 
+	"css": "https://i-msdn.sec.s-msft.com", 
+	"ttf": "https://i-msdn.sec.s-msft.com"
+});
+/**/
+} finally { MTPS._injectNextScript_0 && MTPS._injectNextScript_0(); }</script><script class="mtps-injected">try {
+//
+
+        window.appInsightsId = '5eb1b2eb-c47a-497a-a7ac-a1c230b2882f';
+        //
+} finally { MTPS._injectNextScript_1 && MTPS._injectNextScript_1(); }</script><script class="mtps-injected" src="sample_files/Combined_002.js"></script><script class="mtps-injected" src="sample_files/SearchBox.jss"></script><script class="mtps-injected" src="sample_files/Combined.js"></script><script class="mtps-injected">try {
+$(document).ready(function() {
+        try {
+            var token = $("#globalRequestVerification input[name='__RequestVerificationToken']").clone();
+            $("#siteFeedbackForm").append(token);
+        } catch(err) {
+            
+        }
+    });
+} finally { MTPS._injectNextScript_5 && MTPS._injectNextScript_5(); }</script></head>
+<body class="library FF">
+    <div id="page">
+
+        
+
+        
+    
+
+    
+    <link type="text/css" rel="stylesheet">
+    
+        
+        
+    <input id="isHeaderBleeding" value="true" type="hidden">
+    <div id="ux-header" dir="ltr" class="ltr msdn" ms.pgarea="header">
+        
+
+      <header>
+        <span id="singleCol"></span>
+        <span id="doubleCol"></span>
+        <span id="isMobile"></span>
+        <div>
+          <div class="row topRow" role="banner">
+            <div class="top">
+              <div class="left">
+                <a class="msdnLogoImg" href="https://msdn.microsoft.com/en-us" title="MSDN home" ms.cmpgrp="mslogo">
+                  <div class="clip70x15">
+                    <img alt="Microsoft Logo" id="msft-logo" class="msft-logo" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" style="border: 1px solid rgb(255, 204, 204); background-repeat: no-repeat; background-position: center center; background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9gMFRANL5LXnioAAAJWSURBVDjLnZI/ixtXFMV/972ZNzPSrmTtalexlsWBGMfEYOzaVciXyKdIkW/hFKnS22WafIDUxk0g2AQSgm0csIPWK42ktaSRNPP+pRBK5SLOqS7cew7ccw4xxrPJ+8XdHx4+7AE8e3Cj++zLm71fvrqT8x+QAK35dJr2n/x89urTa+eDm/cS+eI2y3eT+Lx/bt8u1vNqfDH++teXdk/6ThAfUUBIgL9ku75z/8WL7LOlhXIGJ0Pyw75wMcnGv//xSQ2DH4ddu9k01dXWsWzcofhYaiiViLjiWi9UWQa1gzcjWF7hgfzzW5ydnXB62JLjg0PTLfJertNepnQSIA+gE4Cs03UuNYYQYP4e5jPogmSG9vA6rrjC+0AxN2i5Qk0DpXVJhCQB0EVRrzqdFgB1DZfvCDHixiV2NqO6LHHKIKnQMoaWbFBgIrQVgIXaDc+JCHgP5QRZr4jzGWFbo6yncRYviiiQKUhBRch3Lyix4bgPWsAkcDkmZAV2OiE0DaI1WoEShRKF3sWnmt01pFBnJydEpZDEwHSGt47lYsls43AIXjTWV9R1Qx0DGahqLyAhbqrj0/ib0nRzXNoyCo0Kkor2llV0eKOwdUMg4pSQA7JPQXvnJv1B+GlwOvrGlaXB6fV2lb5t6qOtike56DSJgYDGBQcOAsQAfueBMeHR48fhadb1j/58HWARdt6yBv7+/vpBe2o5OogxlcaKdt5aKCNsk309W0WxKQjmQ33/9mJVAdWHdmo/tNvtRZIkfCz+ZQwGg6rT6Zj/LTAajTbD4bD5WIF/AAseEisPFO8uAAAAAElFTkSuQmCC&quot;);" title="[s-msft.com] Microsoft Logo" width="50" height="50">
+                  </div>
+                </a>
+                <div class="GrayPipeDiv clip1x18">
+                  <img alt="Gray Pipe" class="GrayPipe" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" style="border: 1px solid rgb(255, 204, 204); background-repeat: no-repeat; background-position: center center; background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9gMFRANL5LXnioAAAJWSURBVDjLnZI/ixtXFMV/972ZNzPSrmTtalexlsWBGMfEYOzaVciXyKdIkW/hFKnS22WafIDUxk0g2AQSgm0csIPWK42ktaSRNPP+pRBK5SLOqS7cew7ccw4xxrPJ+8XdHx4+7AE8e3Cj++zLm71fvrqT8x+QAK35dJr2n/x89urTa+eDm/cS+eI2y3eT+Lx/bt8u1vNqfDH++teXdk/6ThAfUUBIgL9ku75z/8WL7LOlhXIGJ0Pyw75wMcnGv//xSQ2DH4ddu9k01dXWsWzcofhYaiiViLjiWi9UWQa1gzcjWF7hgfzzW5ydnXB62JLjg0PTLfJertNepnQSIA+gE4Cs03UuNYYQYP4e5jPogmSG9vA6rrjC+0AxN2i5Qk0DpXVJhCQB0EVRrzqdFgB1DZfvCDHixiV2NqO6LHHKIKnQMoaWbFBgIrQVgIXaDc+JCHgP5QRZr4jzGWFbo6yncRYviiiQKUhBRch3Lyix4bgPWsAkcDkmZAV2OiE0DaI1WoEShRKF3sWnmt01pFBnJydEpZDEwHSGt47lYsls43AIXjTWV9R1Qx0DGahqLyAhbqrj0/ib0nRzXNoyCo0Kkor2llV0eKOwdUMg4pSQA7JPQXvnJv1B+GlwOvrGlaXB6fV2lb5t6qOtike56DSJgYDGBQcOAsQAfueBMeHR48fhadb1j/58HWARdt6yBv7+/vpBe2o5OogxlcaKdt5aKCNsk309W0WxKQjmQ33/9mJVAdWHdmo/tNvtRZIkfCz+ZQwGg6rT6Zj/LTAajTbD4bD5WIF/AAseEisPFO8uAAAAAElFTkSuQmCC&quot;);" title="[s-msft.com] Gray Pipe" width="50" height="50">
+                </div>
+                  <a class="DevCenterFullNameNonMegaBlade" href="https://msdn.microsoft.com/en-us">Developer Network</a>
+                <a class="DevCenterFullName" href="https://msdn.microsoft.com/en-us">Developer Network</a>
+                <a class="DevCenterShortName" href="https://msdn.microsoft.com/en-us">Developer</a>
+              </div>
+              <div class="right" ms.cmpgrp="aux nav">
+                <div id="signIn" aria-label="Profile button">
+
+  <div class="profileImage"></div>
+
+
+
+<a class="scarabLink" href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=13&amp;ct=1493185883&amp;rver=6.7.6640.0&amp;wp=mcmbi&amp;wlcxt=msdn%24msdn%24msdn&amp;wreply=https%3a%2f%2fmsdn.microsoft.com%2fen-us%2flibrary%2fms762271%2528v%3dvs.85%2529.aspx&amp;lc=1033&amp;id=254354&amp;mkt=en-us">Sign in</a></div>
+
+
+
+
+                <div class="auxNav">
+                  <div>
+                    <div data-fragmentname="Subscriptions" id="Fragment_Subscriptions" xmlns="http://www.w3.org/1999/xhtml">
+  <a href="https://my.visualstudio.com/?wt.mc_id=o%7Emsft%7Emsdn%7Enav%7Esubscriber&amp;campaign=o%7Emsft%7Emsdn%7Enav%7Esubscriber" id="Subscriptions_2153_1" xmlns="http://www.w3.org/1999/xhtml">
+    <p xmlns="">Subscriber portal</p>
+  </a>
+</div>
+                    <div data-fragmentname="GetTools" id="Fragment_GetTools" xmlns="http://www.w3.org/1999/xhtml">
+  <a href="https://www.visualstudio.com/free-developer-offers/" id="GetTools_2153_3" xmlns="http://www.w3.org/1999/xhtml">Get tools</a>
+</div>
+                  </div>
+                        <div>
+                            
+                        </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="row middleRow">
+            <div class="expandTop">
+              <div class="left"></div>
+              <div class="right"></div>
+            </div>
+          </div>
+        </div>
+        <div id="buttomRowWrapper" class="bg_default">
+          <div class="row buttomRow bg_default">
+            <div class="bottom">
+              <div class="left" role="navigation" aria-label="header toc" ms.cmpgrp="main nav">
+                <a id="grip" class="menu-icon" href="javascript:void(0)" role="button" aria-label="navigation menu"></a>
+                
+                <div id="drawer">
+                  <div class="toc">
+                    
+        <nav>
+            <ul class="navL1">
+                        <li class="inactive toggle">
+                                <a href="javascript:void(0)" role="button" aria-expanded="false">Downloads</a>
+                                <ul class="navL2">
+                                        <li class="inactive">
+
+                                                <a href="https://www.visualstudio.com/downloads/download-visual-studio-vs" role="link" title="Visual Studio">Visual Studio</a>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="https://msdn.microsoft.com/microsoft-sdks-msdn" role="link" title="SDKs">SDKs</a>
+                                        </li>
+                                        <li class="inactive toggle">
+
+                                                <a href="javascript:void(0)" title="Trial software" role="button" aria-expanded="false">Trial software</a>
+                                                <ul class="navL3">
+                                                        <li class="inactive">
+                                                            <a href="https://msdn.microsoft.com/evalcenter" title="Free downloads" role="link">Free downloads</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://msdn.microsoft.com/officeevaluationresources" title="Office resources" role="link">Office resources</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://msdn.microsoft.com/sharepoint2013resources" title="SharePoint Server 2013 resources" role="link">SharePoint Server 2013 resources</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://msdn.microsoft.com/sqlserver2014expressresources" title="SQL Server 2014 Express resources" role="link">SQL Server 2014 Express resources</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://msdn.microsoft.com/windowsserver2012r2resources" title="Windows Server 2012 resources" role="link">Windows Server 2012 resources</a>
+                                                        </li>
+                                                </ul>
+                                        </li>
+                                </ul>
+                        </li>
+                        <li class="inactive toggle">
+                                <a href="javascript:void(0)" role="button" aria-expanded="false">Programs</a>
+                                <ul class="navL2">
+                                        <li class="inactive toggle">
+
+                                                <a href="javascript:void(0)" title="Subscriptions" role="button" aria-expanded="false">Subscriptions</a>
+                                                <ul class="navL3">
+                                                        <li class="inactive">
+                                                            <a href="https://msdn.microsoft.com/msdn-subscriptions-overview" title="Overview" role="link">Overview</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://msdn.microsoft.com/msdn-subscriptions-administration" title="Administrators" role="link">Administrators</a>
+                                                        </li>
+                                                </ul>
+                                        </li>
+                                        <li class="inactive toggle">
+
+                                                <a href="javascript:void(0)" title="Students" role="button" aria-expanded="false">Students</a>
+                                                <ul class="navL3">
+                                                        <li class="inactive">
+                                                            <a href="https://msdn.microsoft.com/imagine/imagine-home" title="Microsoft Imagine" role="link">Microsoft Imagine</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://msdn.microsoft.com/microsoftstudentpartners" title="Microsoft Student Partners" role="link">Microsoft Student Partners</a>
+                                                        </li>
+                                                </ul>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="https://msdn.microsoft.com/applicationbuilder" role="link" title="ISV">ISV</a>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="https://www.microsoft.com/bizspark" role="link" title="Startups">Startups</a>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="https://events.microsoft.com/" role="link" title="Events">Events</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        <li class="inactive toggle">
+                                <a href="javascript:void(0)" role="button" aria-expanded="false">Community</a>
+                                <ul class="navL2">
+                                        <li class="inactive">
+
+                                                <a href="https://msdn.microsoft.com/magazine/dd767791" role="link" title="Magazine">Magazine</a>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="https://social.msdn.microsoft.com/forums/" role="link" title="Forums">Forums</a>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="https://blogs.msdn.microsoft.com/" role="link" title="Blogs">Blogs</a>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="https://channel9.msdn.com/" role="link" title="Channel 9">Channel 9</a>
+                                        </li>
+                                </ul>
+                        </li>
+                        <li class="inactive current toggle">
+                                <a href="javascript:void(0)" role="button" aria-expanded="false">Documentation</a>
+                                <ul class="navL2">
+                                        <li class="inactive current">
+
+                                                <a href="https://msdn.microsoft.com/library" role="link" title="APIs and reference">APIs and reference</a>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="https://msdn.microsoft.com/developer-centers-msdn" role="link" title="Dev centers">Dev centers</a>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="https://code.msdn.microsoft.com/" role="link" title="Samples">Samples</a>
+                                        </li>
+                                        <li class="inactive">
+
+                                                <a href="https://msdn.microsoft.com/retiredcontent" role="link" title="Retired content">Retired content</a>
+                                        </li>
+                                </ul>
+                        </li>
+            </ul>
+        </nav>
+
+                  </div>
+                </div>
+              </div>
+              <div class="right" ms.title="search" role="search">
+                <div data-fragmentname="SearchBox" id="Fragment_SearchBox" xmlns="http://www.w3.org/1999/xhtml">
+  <div class="SearchBox">
+    <form id="HeaderSearchForm" name="HeaderSearchForm" method="get">
+      <button id="FakeHeaderSearchButton" value="Search" type="submit" class="header-search-button" role="button" aria-label="search finder">
+        <div id="search-finder-div" class="clip16x20">
+          <img alt="search finder" id="search-finder" class="search-finder" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" style="border: 1px solid rgb(255, 204, 204); background-repeat: no-repeat; background-position: center center; background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9gMFRANL5LXnioAAAJWSURBVDjLnZI/ixtXFMV/972ZNzPSrmTtalexlsWBGMfEYOzaVciXyKdIkW/hFKnS22WafIDUxk0g2AQSgm0csIPWK42ktaSRNPP+pRBK5SLOqS7cew7ccw4xxrPJ+8XdHx4+7AE8e3Cj++zLm71fvrqT8x+QAK35dJr2n/x89urTa+eDm/cS+eI2y3eT+Lx/bt8u1vNqfDH++teXdk/6ThAfUUBIgL9ku75z/8WL7LOlhXIGJ0Pyw75wMcnGv//xSQ2DH4ddu9k01dXWsWzcofhYaiiViLjiWi9UWQa1gzcjWF7hgfzzW5ydnXB62JLjg0PTLfJertNepnQSIA+gE4Cs03UuNYYQYP4e5jPogmSG9vA6rrjC+0AxN2i5Qk0DpXVJhCQB0EVRrzqdFgB1DZfvCDHixiV2NqO6LHHKIKnQMoaWbFBgIrQVgIXaDc+JCHgP5QRZr4jzGWFbo6yncRYviiiQKUhBRch3Lyix4bgPWsAkcDkmZAV2OiE0DaI1WoEShRKF3sWnmt01pFBnJydEpZDEwHSGt47lYsls43AIXjTWV9R1Qx0DGahqLyAhbqrj0/ib0nRzXNoyCo0Kkor2llV0eKOwdUMg4pSQA7JPQXvnJv1B+GlwOvrGlaXB6fV2lb5t6qOtike56DSJgYDGBQcOAsQAfueBMeHR48fhadb1j/58HWARdt6yBv7+/vpBe2o5OogxlcaKdt5aKCNsk309W0WxKQjmQ33/9mJVAdWHdmo/tNvtRZIkfCz+ZQwGg6rT6Zj/LTAajTbD4bD5WIF/AAseEisPFO8uAAAAAElFTkSuQmCC&quot;);" title="[s-msft.com] search finder" width="50" height="50">
+        </div>
+      </button>
+      <button id="HeaderSearchButton" style="display:none"></button>
+      <div id="searchSplitter"></div>
+      <div id="searchCloseIconDiv" class="clip16x20" tabindex="0">
+        <img alt="search clear" id="searchCloseIcon" class="search-clear-x" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" style="border: 1px solid rgb(255, 204, 204); background-repeat: no-repeat; background-position: center center; background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9gMFRANL5LXnioAAAJWSURBVDjLnZI/ixtXFMV/972ZNzPSrmTtalexlsWBGMfEYOzaVciXyKdIkW/hFKnS22WafIDUxk0g2AQSgm0csIPWK42ktaSRNPP+pRBK5SLOqS7cew7ccw4xxrPJ+8XdHx4+7AE8e3Cj++zLm71fvrqT8x+QAK35dJr2n/x89urTa+eDm/cS+eI2y3eT+Lx/bt8u1vNqfDH++teXdk/6ThAfUUBIgL9ku75z/8WL7LOlhXIGJ0Pyw75wMcnGv//xSQ2DH4ddu9k01dXWsWzcofhYaiiViLjiWi9UWQa1gzcjWF7hgfzzW5ydnXB62JLjg0PTLfJertNepnQSIA+gE4Cs03UuNYYQYP4e5jPogmSG9vA6rrjC+0AxN2i5Qk0DpXVJhCQB0EVRrzqdFgB1DZfvCDHixiV2NqO6LHHKIKnQMoaWbFBgIrQVgIXaDc+JCHgP5QRZr4jzGWFbo6yncRYviiiQKUhBRch3Lyix4bgPWsAkcDkmZAV2OiE0DaI1WoEShRKF3sWnmt01pFBnJydEpZDEwHSGt47lYsls43AIXjTWV9R1Qx0DGahqLyAhbqrj0/ib0nRzXNoyCo0Kkor2llV0eKOwdUMg4pSQA7JPQXvnJv1B+GlwOvrGlaXB6fV2lb5t6qOtike56DSJgYDGBQcOAsQAfueBMeHR48fhadb1j/58HWARdt6yBv7+/vpBe2o5OogxlcaKdt5aKCNsk309W0WxKQjmQ33/9mJVAdWHdmo/tNvtRZIkfCz+ZQwGg6rT6Zj/LTAajTbD4bD5WIF/AAseEisPFO8uAAAAAElFTkSuQmCC&quot;);" title="[s-msft.com] search clear" width="50" height="50">
+      </div>
+      <div id="searchTextContainer" style="width: 0;">
+        <input id="HeaderSearchTextBox" name="query" aria-label="search edit textbox" maxlength="200" onfocus="Epx.Controls.SearchBox.watermarkFocus(event, this.title)" onblur="Epx.Controls.SearchBox.watermarkBlur(event, this.title)" type="text">
+      </div>
+    </form>
+    
+    
+  </div>
+</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </header>
+
+    </div>
+
+    
+    
+    
+    <div id="jumpInfo" style="display: none">We’re sorry. The content you requested has been removed. You’ll be auto redirected in 1 second.</div>
+
+
+
+
+
+<link type="text/css" rel="stylesheet">
+<link type="text/css" rel="stylesheet">
+
+
+    <div id="breadcrumbs" ms.pgarea="body" ms.cmpgrp="breadcrumbs">
+        <div id="breadcrumbDesktop" class="breadCrumb">
+                        <span class="breadcrumbEllipsis"><a href="https://msdn.microsoft.com/en-us/library/bg126469%28v=vs.85%29.aspx" title="Desktop App Technologies"></a></span>
+                        <span><a href="https://msdn.microsoft.com/en-us/library/ee663264%28v=vs.85%29.aspx" title="Data Access and Storage"><span>Data Access and Storage</span></a></span>
+                        <span><a href="https://msdn.microsoft.com/en-us/library/ms763742%28v=vs.85%29.aspx" title="MSXML"><span>MSXML</span></a></span>
+                        <span class="breadcrumbDropSmall">
+                            <a id="breadcrumbDropDownButton" href="#" targethref="https://msdn.microsoft.com/en-us/library/ms763742(v=vs.85).aspx" title="MSXML SDK Overview"><span>MSXML SDK Overview</span></a>
+                        </span>
+        </div>
+        <div id="breadcrumbDropDownMenu"></div>
+
+        <div id="breadcrumbTablet" class="breadCrumb">
+                        <span class="breadcrumbEllipsis"><a href="https://msdn.microsoft.com/en-us/library/ms763742%28v=vs.85%29.aspx" title="MSXML"></a></span>
+                    <span><a href="https://msdn.microsoft.com/en-us/library/ms760399%28v=vs.85%29.aspx" title="MSXML SDK Overview"><span>MSXML SDK Overview</span></a></span>
+                <span class="breadcrumbDropSmall"><a id="tocDropDownButton" href="#" title="Sample XML File (books.xml)"><span>Sample XML File (books.xml)</span></a></span>
+        </div>
+        <div id="tocDropDownMenu"></div>
+        <div id="breadcrumbMobile" class="breadCrumb">
+                <span class="breadcrumbEllipsis"><a href="https://msdn.microsoft.com/en-us/library/ms760399%28v=vs.85%29.aspx" title="MSXML SDK Overview"></a></span>
+            <span class="breadcrumbDropSmall"><a id="tocPopupButton" href="#" title="Sample XML File (books.xml)"><span>Sample XML File (books.xml)</span></a></span>
+        </div>
+    </div>
+    <div id="tocPopupMenu">
+        <div id="tocPopMenuClose" class="tocCloseLarge"></div>
+        <div id="tocTitle">Sample XML File (books.xml)</div>        
+    </div>
+
+    
+
+
+        <div id="body" ms.pgarea="body" class="">
+            <span id="tabletView_large"></span>
+            <span id="tabletView_small"></span>
+            <span id="mobileView"></span>
+            
+
+
+
+
+
+
+
+
+
+    <div id="leftNav" ms.cmpgrp="left toc" role="navigation" aria-label="left toc">
+
+    
+
+
+<div id="tocnav" class="ArchiveV2">
+    <div class="tocunselected">
+        <div id="tocExpandArea">
+            <span class="toc_empty"></span>
+            <span id="tocExpandButton"><a href="javascript:void(0)" aria-label="expand sibling toc" role="button"></a></span>
+        </div>
+        <div id="tocExpand"></div>
+    </div>
+    <div class="tocselected"></div>
+    <div class="tocunselected">
+                <div class="toclevel " data-toclevel="1">
+<a href="https://msdn.microsoft.com/en-us/library/ms767700%28v=vs.85%29.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="About the MSXML SDK">About the MSXML SDK</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://msdn.microsoft.com/en-us/library/jj152146%28v=vs.85%29.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="MSXML Roadmap">MSXML Roadmap</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a data-tochassubtree="true" href="https://msdn.microsoft.com/en-us/library/ms753751%28v=vs.85%29.aspx" id="jj152148_VS.85_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="What's New in MSXML">What's New in MSXML</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://msdn.microsoft.com/en-us/library/ms753804%28v=vs.85%29.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Building MSXML Applications">Building MSXML Applications</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://msdn.microsoft.com/en-us/library/ms762314%28v=vs.85%29.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="MSXML API History">MSXML API History</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a data-tochassubtree="true" href="https://msdn.microsoft.com/en-us/library/ms757837%28v=vs.85%29.aspx" id="cc507458_VS.85_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="GUID and ProgID Information">GUID and ProgID Information</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a data-tochassubtree="true" href="https://msdn.microsoft.com/en-us/library/ms757838%28v=vs.85%29.aspx" id="ms770277_VS.85_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Dependencies in MSXML">Dependencies in MSXML</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://msdn.microsoft.com/en-us/library/ms756007%28v=vs.85%29.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Tips for Converting Samples to VBScript">Tips for Converting Samples to VBScript</a>                </div>
+                <div class="toclevel current" data-toclevel="1">
+<a href="https://msdn.microsoft.com/en-us/library/ms762271%28v=vs.85%29.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Sample XML File (books.xml)">Sample XML File (books.xml)</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a href="https://msdn.microsoft.com/en-us/library/ms754611%28v=vs.85%29.aspx" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="MSXML Security Overview">MSXML Security Overview</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a data-tochassubtree="true" href="https://msdn.microsoft.com/en-us/library/cc507432%28v=vs.85%29.aspx" id="cc507462_VS.85_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Installing and Redistributing MSXML">Installing and Redistributing MSXML</a>                </div>
+                <div class="toclevel " data-toclevel="1">
+<a data-tochassubtree="true" href="https://msdn.microsoft.com/en-us/library/cc507427%28v=vs.85%29.aspx" id="jj152149_VS.85_en-us" mtpsaliasid="" mtpsassetid="" mtpsshortid="" title="Handling MSXML Errors">Handling MSXML Errors</a>                </div>
+    </div>
+    <a id="tocMenuToggler" href="javascript:void(0)" role="button">
+        <span id="tocMenuTogglerIcon" class="tocMenuCollapse" role="button" aria-expanded="true" aria-label="Table of contents menu"></span>
+        <div id="tocMenuTogglerLabel">TOC</div>
+    </a>
+</div>            <div style="display:none">
+                <div id="CollapseLocalizeString">Collapse the table of content</div>
+                <div id="ExpandLocalizeString">Expand the table of content</div>
+            </div>
+        <div>
+            <a id="isd_archiveControlResponsive" style="display:none;" href="javascript:void(0)" role="button" aria-label="Hide Archived Versions" data-include-archive="Show Archived Versions" data-exclude-archive="Hide Archived Versions">
+            </a>
+            <div id="isd_archiveInstrument" style="display:none">This documentation is archived and is not being maintained.</div>
+        </div>
+    </div>
+     <div id="content" class="content" ms.cmpgrp="content body" role="main">
+
+
+
+
+
+
+
+
+    <div id="archiveDisclaimerText" style="display:none">This documentation is archived and is not being maintained.</div>
+
+
+
+<div xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="topic">
+    <h1 class="title">Sample XML File (books.xml)</h1>
+    <div id="mainSection">
+      <div id="mainBody">&nbsp;<p>The following XML file is used in various samples throughout the Microsoft XML Core Services (MSXML) SDK.</p><p>
+</p><div id="code-snippet-1" class="codeSnippetContainer" xmlns="">
+    <div class="codeSnippetContainerTabs">
+        <div class="codeSnippetContainerTabSingle" dir="ltr"><a>XML</a></div>
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" style="display: none;" title="Copy to clipboard." href="javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_ac0874f7-8d0f-42b5-adba-73d19a5d7f25');" ms.cmptyp="CodeSnippet">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_ac0874f7-8d0f-42b5-adba-73d19a5d7f25" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color:Black;"><pre><span style="color:Blue;">&lt;?</span><span style="color:#A31515;">xml</span> <span style="color:Red;">version</span><span style="color:Blue;">=</span><span style="color:Black;">"</span><span style="color:Blue;">1.0</span><span style="color:Black;">"</span><span style="color:Blue;">?&gt;</span>
+<span style="color:Blue;">&lt;</span><span style="color:#A31515;">catalog</span><span style="color:Blue;">&gt;</span>
+   <span style="color:Blue;">&lt;</span><span style="color:#A31515;">book</span> <span style="color:Red;">id</span><span style="color:Blue;">=</span><span style="color:Black;">"</span><span style="color:Blue;">bk101</span><span style="color:Black;">"</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">author</span><span style="color:Blue;">&gt;</span>Gambardella, Matthew<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">author</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">title</span><span style="color:Blue;">&gt;</span>XML Developer's Guide<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">title</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">genre</span><span style="color:Blue;">&gt;</span>Computer<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">genre</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">price</span><span style="color:Blue;">&gt;</span>44.95<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">price</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">publish_date</span><span style="color:Blue;">&gt;</span>2000-10-01<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">publish_date</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">description</span><span style="color:Blue;">&gt;</span>An in-depth look at creating applications 
+      with XML.<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">description</span><span style="color:Blue;">&gt;</span>
+   <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">book</span><span style="color:Blue;">&gt;</span>
+   <span style="color:Blue;">&lt;</span><span style="color:#A31515;">book</span> <span style="color:Red;">id</span><span style="color:Blue;">=</span><span style="color:Black;">"</span><span style="color:Blue;">bk102</span><span style="color:Black;">"</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">author</span><span style="color:Blue;">&gt;</span>Ralls, Kim<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">author</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">title</span><span style="color:Blue;">&gt;</span>Midnight Rain<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">title</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">genre</span><span style="color:Blue;">&gt;</span>Fantasy<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">genre</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">price</span><span style="color:Blue;">&gt;</span>5.95<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">price</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">publish_date</span><span style="color:Blue;">&gt;</span>2000-12-16<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">publish_date</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">description</span><span style="color:Blue;">&gt;</span>A former architect battles corporate zombies, 
+      an evil sorceress, and her own childhood to become queen 
+      of the world.<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">description</span><span style="color:Blue;">&gt;</span>
+   <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">book</span><span style="color:Blue;">&gt;</span>
+   <span style="color:Blue;">&lt;</span><span style="color:#A31515;">book</span> <span style="color:Red;">id</span><span style="color:Blue;">=</span><span style="color:Black;">"</span><span style="color:Blue;">bk103</span><span style="color:Black;">"</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">author</span><span style="color:Blue;">&gt;</span>Corets, Eva<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">author</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">title</span><span style="color:Blue;">&gt;</span>Maeve Ascendant<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">title</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">genre</span><span style="color:Blue;">&gt;</span>Fantasy<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">genre</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">price</span><span style="color:Blue;">&gt;</span>5.95<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">price</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">publish_date</span><span style="color:Blue;">&gt;</span>2000-11-17<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">publish_date</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">description</span><span style="color:Blue;">&gt;</span>After the collapse of a nanotechnology 
+      society in England, the young survivors lay the 
+      foundation for a new society.<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">description</span><span style="color:Blue;">&gt;</span>
+   <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">book</span><span style="color:Blue;">&gt;</span>
+   <span style="color:Blue;">&lt;</span><span style="color:#A31515;">book</span> <span style="color:Red;">id</span><span style="color:Blue;">=</span><span style="color:Black;">"</span><span style="color:Blue;">bk104</span><span style="color:Black;">"</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">author</span><span style="color:Blue;">&gt;</span>Corets, Eva<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">author</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">title</span><span style="color:Blue;">&gt;</span>Oberon's Legacy<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">title</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">genre</span><span style="color:Blue;">&gt;</span>Fantasy<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">genre</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">price</span><span style="color:Blue;">&gt;</span>5.95<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">price</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">publish_date</span><span style="color:Blue;">&gt;</span>2001-03-10<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">publish_date</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">description</span><span style="color:Blue;">&gt;</span>In post-apocalypse England, the mysterious 
+      agent known only as Oberon helps to create a new life 
+      for the inhabitants of London. Sequel to Maeve 
+      Ascendant.<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">description</span><span style="color:Blue;">&gt;</span>
+   <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">book</span><span style="color:Blue;">&gt;</span>
+   <span style="color:Blue;">&lt;</span><span style="color:#A31515;">book</span> <span style="color:Red;">id</span><span style="color:Blue;">=</span><span style="color:Black;">"</span><span style="color:Blue;">bk105</span><span style="color:Black;">"</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">author</span><span style="color:Blue;">&gt;</span>Corets, Eva<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">author</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">title</span><span style="color:Blue;">&gt;</span>The Sundered Grail<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">title</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">genre</span><span style="color:Blue;">&gt;</span>Fantasy<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">genre</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">price</span><span style="color:Blue;">&gt;</span>5.95<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">price</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">publish_date</span><span style="color:Blue;">&gt;</span>2001-09-10<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">publish_date</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">description</span><span style="color:Blue;">&gt;</span>The two daughters of Maeve, half-sisters, 
+      battle one another for control of England. Sequel to 
+      Oberon's Legacy.<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">description</span><span style="color:Blue;">&gt;</span>
+   <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">book</span><span style="color:Blue;">&gt;</span>
+   <span style="color:Blue;">&lt;</span><span style="color:#A31515;">book</span> <span style="color:Red;">id</span><span style="color:Blue;">=</span><span style="color:Black;">"</span><span style="color:Blue;">bk106</span><span style="color:Black;">"</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">author</span><span style="color:Blue;">&gt;</span>Randall, Cynthia<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">author</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">title</span><span style="color:Blue;">&gt;</span>Lover Birds<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">title</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">genre</span><span style="color:Blue;">&gt;</span>Romance<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">genre</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">price</span><span style="color:Blue;">&gt;</span>4.95<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">price</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">publish_date</span><span style="color:Blue;">&gt;</span>2000-09-02<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">publish_date</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">description</span><span style="color:Blue;">&gt;</span>When Carla meets Paul at an ornithology 
+      conference, tempers fly as feathers get ruffled.<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">description</span><span style="color:Blue;">&gt;</span>
+   <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">book</span><span style="color:Blue;">&gt;</span>
+   <span style="color:Blue;">&lt;</span><span style="color:#A31515;">book</span> <span style="color:Red;">id</span><span style="color:Blue;">=</span><span style="color:Black;">"</span><span style="color:Blue;">bk107</span><span style="color:Black;">"</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">author</span><span style="color:Blue;">&gt;</span>Thurman, Paula<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">author</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">title</span><span style="color:Blue;">&gt;</span>Splish Splash<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">title</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">genre</span><span style="color:Blue;">&gt;</span>Romance<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">genre</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">price</span><span style="color:Blue;">&gt;</span>4.95<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">price</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">publish_date</span><span style="color:Blue;">&gt;</span>2000-11-02<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">publish_date</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">description</span><span style="color:Blue;">&gt;</span>A deep sea diver finds true love twenty 
+      thousand leagues beneath the sea.<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">description</span><span style="color:Blue;">&gt;</span>
+   <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">book</span><span style="color:Blue;">&gt;</span>
+   <span style="color:Blue;">&lt;</span><span style="color:#A31515;">book</span> <span style="color:Red;">id</span><span style="color:Blue;">=</span><span style="color:Black;">"</span><span style="color:Blue;">bk108</span><span style="color:Black;">"</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">author</span><span style="color:Blue;">&gt;</span>Knorr, Stefan<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">author</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">title</span><span style="color:Blue;">&gt;</span>Creepy Crawlies<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">title</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">genre</span><span style="color:Blue;">&gt;</span>Horror<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">genre</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">price</span><span style="color:Blue;">&gt;</span>4.95<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">price</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">publish_date</span><span style="color:Blue;">&gt;</span>2000-12-06<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">publish_date</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">description</span><span style="color:Blue;">&gt;</span>An anthology of horror stories about roaches,
+      centipedes, scorpions  and other insects.<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">description</span><span style="color:Blue;">&gt;</span>
+   <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">book</span><span style="color:Blue;">&gt;</span>
+   <span style="color:Blue;">&lt;</span><span style="color:#A31515;">book</span> <span style="color:Red;">id</span><span style="color:Blue;">=</span><span style="color:Black;">"</span><span style="color:Blue;">bk109</span><span style="color:Black;">"</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">author</span><span style="color:Blue;">&gt;</span>Kress, Peter<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">author</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">title</span><span style="color:Blue;">&gt;</span>Paradox Lost<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">title</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">genre</span><span style="color:Blue;">&gt;</span>Science Fiction<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">genre</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">price</span><span style="color:Blue;">&gt;</span>6.95<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">price</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">publish_date</span><span style="color:Blue;">&gt;</span>2000-11-02<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">publish_date</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">description</span><span style="color:Blue;">&gt;</span>After an inadvertant trip through a Heisenberg
+      Uncertainty Device, James Salway discovers the problems 
+      of being quantum.<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">description</span><span style="color:Blue;">&gt;</span>
+   <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">book</span><span style="color:Blue;">&gt;</span>
+   <span style="color:Blue;">&lt;</span><span style="color:#A31515;">book</span> <span style="color:Red;">id</span><span style="color:Blue;">=</span><span style="color:Black;">"</span><span style="color:Blue;">bk110</span><span style="color:Black;">"</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">author</span><span style="color:Blue;">&gt;</span>O'Brien, Tim<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">author</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">title</span><span style="color:Blue;">&gt;</span>Microsoft .NET: The Programming Bible<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">title</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">genre</span><span style="color:Blue;">&gt;</span>Computer<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">genre</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">price</span><span style="color:Blue;">&gt;</span>36.95<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">price</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">publish_date</span><span style="color:Blue;">&gt;</span>2000-12-09<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">publish_date</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">description</span><span style="color:Blue;">&gt;</span>Microsoft's .NET initiative is explored in 
+      detail in this deep programmer's reference.<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">description</span><span style="color:Blue;">&gt;</span>
+   <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">book</span><span style="color:Blue;">&gt;</span>
+   <span style="color:Blue;">&lt;</span><span style="color:#A31515;">book</span> <span style="color:Red;">id</span><span style="color:Blue;">=</span><span style="color:Black;">"</span><span style="color:Blue;">bk111</span><span style="color:Black;">"</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">author</span><span style="color:Blue;">&gt;</span>O'Brien, Tim<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">author</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">title</span><span style="color:Blue;">&gt;</span>MSXML3: A Comprehensive Guide<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">title</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">genre</span><span style="color:Blue;">&gt;</span>Computer<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">genre</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">price</span><span style="color:Blue;">&gt;</span>36.95<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">price</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">publish_date</span><span style="color:Blue;">&gt;</span>2000-12-01<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">publish_date</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">description</span><span style="color:Blue;">&gt;</span>The Microsoft MSXML3 parser is covered in 
+      detail, with attention to XML DOM interfaces, XSLT processing, 
+      SAX and more.<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">description</span><span style="color:Blue;">&gt;</span>
+   <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">book</span><span style="color:Blue;">&gt;</span>
+   <span style="color:Blue;">&lt;</span><span style="color:#A31515;">book</span> <span style="color:Red;">id</span><span style="color:Blue;">=</span><span style="color:Black;">"</span><span style="color:Blue;">bk112</span><span style="color:Black;">"</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">author</span><span style="color:Blue;">&gt;</span>Galos, Mike<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">author</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">title</span><span style="color:Blue;">&gt;</span>Visual Studio 7: A Comprehensive Guide<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">title</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">genre</span><span style="color:Blue;">&gt;</span>Computer<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">genre</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">price</span><span style="color:Blue;">&gt;</span>49.95<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">price</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">publish_date</span><span style="color:Blue;">&gt;</span>2001-04-16<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">publish_date</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">description</span><span style="color:Blue;">&gt;</span>Microsoft Visual Studio 7 is explored in depth,
+      looking at how Visual Basic, Visual C++, C#, and ASP+ are 
+      integrated into a comprehensive development 
+      environment.<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">description</span><span style="color:Blue;">&gt;</span>
+   <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">book</span><span style="color:Blue;">&gt;</span>
+<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">catalog</span><span style="color:Blue;">&gt;</span>
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+<p></p></div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="libraryMemberFilter">
+    <div class="filterContainer">
+        <span>Show:</span>
+        <label>
+            <input class="libraryFilterInherited" checked="checked" value="Inherit" type="checkbox">Inherited
+        </label>
+        <label>
+            <input class="libraryFilterProtected" checked="checked" value="Protected" type="checkbox">Protected
+        </label>
+    </div>
+</div>
+    
+<input id="libraryMemberFilterEmptyWarning" value="There are no members available with your current filter settings." type="hidden">
+
+
+
+    </div>
+<div id="rightNavigationMenu" ms.cmpgrp="right nav">
+    <div id="mobileButtons">
+        <div id="navigationButtons">
+            <a id="isd_print" href="https://msdn.microsoft.com/en-us/library/ms762271%28d=printer,v=vs.85%29.aspx" rel="nofollow"><ins class="print"></ins>Print </a>
+            <a id="isd_printABook" href="https://msdn.microsoft.com/en-us/library/export/help/?returnurl=%2fen-us%2flibrary%2fms762271%28v%3dvs.85%29.aspx">
+                <ins class="export"></ins>Export (<span class="count">0</span>)
+            </a>
+        </div>
+    </div>
+    <div id="navMain">
+        <div id="closeNavigation">
+            <a class="tocCloseSmall" id="closeButton"></a>
+        </div>
+        <div id="navigationButtons">
+            <a id="isd_print" href="https://msdn.microsoft.com/en-us/library/ms762271%28d=printer,v=vs.85%29.aspx" rel="nofollow"><ins class="print"></ins>Print </a>
+            <a id="isdShare" href="#" role="button" aria-expanded="false">
+                <ins class="share"></ins>Share
+            </a>
+            <div id="socials" style="display: none">
+                <a class="isdFacebook" href="#" aria-label="Share on Facebook">
+                    <ins class="facebook"></ins>
+                </a>
+                <a class="isdTwitter" href="#" aria-label="Share on Twitter">
+                    <ins class="twitter"></ins>
+                </a>
+                <a class="isdGooglePlus" href="#" aria-label="Share on Google+">
+                    <ins class="googlePlus"></ins>
+                </a>
+            </div>
+        </div>
+        <div id="indoc_toc" style="display: none" ms.cmpgrp="indoc toc">
+            <div id="indoc_title">IN THIS ARTICLE</div>
+            <ul id="indoc_toclist"></ul>
+        </div>
+    </div>
+</div>
+<div id="rightNavigationMenuThumbnail" class="rightNavigationMenuThumbnail">
+</div>
+
+
+
+
+
+        </div>
+        <div class="clear"></div>
+
+        
+
+<input name="__RequestVerificationToken" value="5eWSbuhihajB3-_nuST-nngLE7ouKZ_JZLw9_B_cU7WjljljzcJWlH-zZ0U9AayciaD8ce7_XR6jOeeZE0670c_g0uA1" type="hidden">
+<input id="ratingValueSubmitUrl" value="https://msdn.microsoft.com/en-us/library/feedback/rate/ms762271(v=vs.85).aspx" type="hidden">
+<input id="ratingAdditionalSubmitUrl" value="https://msdn.microsoft.com/en-us/library/feedback/additional/ms762271(v=vs.85).aspx" type="hidden">
+<input id="isTopicRated" value="false" type="hidden">
+
+
+
+
+    <div id="lib-footer">
+        
+
+    
+    <link type="text/css" rel="stylesheet">
+    
+        
+    <div id="ux-footer" class="" style="" dir="ltr" ms.pgarea="footer">
+
+
+    <div id="standardRatingBefore" class="clear stdr-container-before"></div>
+    <div id="standardRating" class="stdr-container" ms.pgarea="body">
+        <div class="stdr-close"></div>
+        <div class="stdr-vote stdr-content">
+            <div class="stdr-content">
+                <span class="stdr-votetitle">Is this page helpful?</span>
+                <button class="stdr-yes" aria-label="Yes, this page was helpful">Yes</button>
+                <button class="stdr-no" aria-label="No, this page was not helpful">No</button>
+                <input id="s_ratingValue" value="" type="hidden">
+            </div>
+        </div>
+        <div class="stdr-feedback" style="display: none">
+            <div class="stdr-form">
+                <div class="stdr-fieldtitle">Additional feedback?</div>
+                <textarea class="stdr-detail" rows="6" maxlength="1500"></textarea>
+                <div>
+                    <span class="stdr-count"><span class="stdr-charcnt">1500</span> characters remaining</span>
+                    <div class="stdr-buttons">
+                        <button class="stdr-provide" aria-label="Submit my additional feedback">Submit</button>
+                        <button class="stdr-skip" aria-label="Skip additional feedback">Skip this</button>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="stdr-thanks" style="display: none">
+            <div class="stdr-content">
+                <span class="stdr-thankyou">Thank you!</span>
+                <span class="stdr-appreciate">We appreciate your feedback.</span>
+            </div>
+        </div>
+
+        
+        <div id="contentFeedbackQAContainer" style="display: none;"></div>
+    </div>
+    <div id="standardRatingPlaceholder" style="display: none"></div>
+    
+
+        <footer class="top" role="navigation" aria-label="footer">
+            <div data-fragmentname="LeftLinks" id="Fragment_LeftLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <h4 class="linkListTitle">Dev centers</h4>
+    <ul class="links">
+      <li>
+        <a href="https://developer.microsoft.com/en-us/windows" id="LeftLinks_2148_1" class="windowsBlue" xmlns="http://www.w3.org/1999/xhtml">Windows</a>
+      </li>
+      <li>
+        <a href="https://dev.office.com/" id="LeftLinks_2148_3" class="office" xmlns="http://www.w3.org/1999/xhtml">Office</a>
+      </li>
+      <li>
+        <a href="https://www.visualstudio.com/" id="LeftLinks_2148_4" class="visualStudio" xmlns="http://www.w3.org/1999/xhtml">Visual Studio</a>
+      </li>
+      <li>
+        <a href="https://docs.microsoft.com/en-us/azure/" target="_blank" id="LeftLinks_2148_12" xmlns="http://www.w3.org/1999/xhtml">Microsoft Azure</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/developer-centers-msdn" id="LeftLinks_2148_5" xmlns="http://www.w3.org/1999/xhtml">More...</a>
+      </li>
+    </ul>
+  </div>
+</div>
+            <div id="rightLinks">
+                <div data-fragmentname="CenterLinks1" id="Fragment_CenterLinks1" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <h4 class="linkListTitle">Learning resources</h4>
+    <ul class="links">
+      <li>
+        <a href="https://mva.microsoft.com/" id="CenterLinks1_2151_4" xmlns="http://www.w3.org/1999/xhtml">Microsoft Virtual Academy</a>
+      </li>
+      <li>
+        <a href="https://channel9.msdn.com/" id="CenterLinks1_2151_5" xmlns="http://www.w3.org/1999/xhtml">Channel 9</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/magazine/" id="CenterLinks1_2151_7" xmlns="http://www.w3.org/1999/xhtml">MSDN Magazine</a>
+      </li>
+    </ul>
+  </div>
+</div>
+                <div data-fragmentname="CenterLinks2" id="Fragment_CenterLinks2" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <h4 class="linkListTitle">Community</h4>
+    <ul class="links">
+      <li>
+        <a href="https://social.msdn.microsoft.com/forums/en-us/home" id="CenterLinks2_2151_8" xmlns="http://www.w3.org/1999/xhtml">Forums</a>
+      </li>
+      <li>
+        <a href="https://blogs.msdn.microsoft.com/developer-tools/" id="CenterLinks2_2151_9" xmlns="http://www.w3.org/1999/xhtml">Blogs</a>
+      </li>
+      <li>
+        <a href="https://www.codeplex.com/" id="CenterLinks2_2151_10" xmlns="http://www.w3.org/1999/xhtml">Codeplex</a>
+      </li>
+    </ul>
+  </div>
+</div>
+                <div data-fragmentname="CenterLinks3" id="Fragment_CenterLinks3" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <h4 class="linkListTitle">Support</h4>
+    <ul class="links">
+      <li>
+        <a href="https://msdn.microsoft.com/hh361695" id="CenterLinks3_2151_11" xmlns="http://www.w3.org/1999/xhtml">Self support</a>
+      </li>
+    </ul>
+  </div>
+</div>
+                <div data-fragmentname="CenterLinks4" id="Fragment_CenterLinks4" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <h4 class="linkListTitle">Programs</h4>
+    <ul class="links">
+      <li>
+        <a href="https://bizspark.microsoft.com/Startups/Index" id="CenterLinks4_2151_13" xmlns="http://www.w3.org/1999/xhtml">BizSpark (for startups)</a>
+      </li>
+      <li>
+        <a href="https://imagine.microsoft.com/en-us" id="CenterLinks4_2151_22" xmlns="http://www.w3.org/1999/xhtml">Microsoft Imagine (for students)</a>
+      </li>
+    </ul>
+  </div>
+</div>
+            </div>
+        </footer>
+
+        <footer class="bottom" role="contentinfo">
+            <span class="localeContainer">
+                
+    <form class="selectLocale" id="selectLocaleForm" action="https://msdn.microsoft.com/en-us/selectlocale-dmc">
+        <input name="fromPage" value="https%3a%2f%2fmsdn.microsoft.com%2fen-us%2flibrary%2fms762271(v%3dvs.85).aspx" type="hidden">
+        <a href="#" onclick="$('#selectLocaleForm').submit();return false;" title="Change your language">United States (English)</a>
+    </form>
+
+
+            </span>
+
+            <div data-fragmentname="BottomLinks" id="Fragment_BottomLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <ul class="links horizontal">
+      <li>
+        <a href="https://msdn.microsoft.com/en-us/flashnewsletter" id="BottomLinks_2148_7" xmlns="http://www.w3.org/1999/xhtml">Newsletter</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/en-us/dn529288" id="BottomLinks_2148_8" xmlns="http://www.w3.org/1999/xhtml">Privacy &amp; cookies</a>
+      </li>
+      <li>
+        <a href="https://msdn.microsoft.com/en-us/cc300389" id="BottomLinks_2148_9" xmlns="http://www.w3.org/1999/xhtml">Terms of use</a>
+      </li>
+      <li>
+        <a href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/" id="BottomLinks_2148_10" xmlns="http://www.w3.org/1999/xhtml">Trademarks</a>
+      </li>
+    </ul>
+  </div>
+</div>
+            <span class="logoLegal">
+                <span class="logoSpan clip67x13" role="img" tabindex="0" aria-label="microsoft logo">
+                    <img alt="logo" class="logo" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" style="border: 1px solid rgb(255, 204, 204); background-repeat: no-repeat; background-position: center center; background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9gMFRANL5LXnioAAAJWSURBVDjLnZI/ixtXFMV/972ZNzPSrmTtalexlsWBGMfEYOzaVciXyKdIkW/hFKnS22WafIDUxk0g2AQSgm0csIPWK42ktaSRNPP+pRBK5SLOqS7cew7ccw4xxrPJ+8XdHx4+7AE8e3Cj++zLm71fvrqT8x+QAK35dJr2n/x89urTa+eDm/cS+eI2y3eT+Lx/bt8u1vNqfDH++teXdk/6ThAfUUBIgL9ku75z/8WL7LOlhXIGJ0Pyw75wMcnGv//xSQ2DH4ddu9k01dXWsWzcofhYaiiViLjiWi9UWQa1gzcjWF7hgfzzW5ydnXB62JLjg0PTLfJertNepnQSIA+gE4Cs03UuNYYQYP4e5jPogmSG9vA6rrjC+0AxN2i5Qk0DpXVJhCQB0EVRrzqdFgB1DZfvCDHixiV2NqO6LHHKIKnQMoaWbFBgIrQVgIXaDc+JCHgP5QRZr4jzGWFbo6yncRYviiiQKUhBRch3Lyix4bgPWsAkcDkmZAV2OiE0DaI1WoEShRKF3sWnmt01pFBnJydEpZDEwHSGt47lYsls43AIXjTWV9R1Qx0DGahqLyAhbqrj0/ib0nRzXNoyCo0Kkor2llV0eKOwdUMg4pSQA7JPQXvnJv1B+GlwOvrGlaXB6fV2lb5t6qOtike56DSJgYDGBQcOAsQAfueBMeHR48fhadb1j/58HWARdt6yBv7+/vpBe2o5OogxlcaKdt5aKCNsk309W0WxKQjmQ33/9mJVAdWHdmo/tNvtRZIkfCz+ZQwGg6rT6Zj/LTAajTbD4bD5WIF/AAseEisPFO8uAAAAAElFTkSuQmCC&quot;);" title="[s-msft.com] logo" width="50" height="50">
+                </span>
+                <span class="copyright">© 2017 Microsoft</span>
+            </span>
+        </footer>
+    </div>
+    
+
+    </div>
+
+
+        <div class="footerPrintView">
+            <div class="footerCopyrightPrintView">© 2017 Microsoft</div>
+        </div>
+
+        
+        
+
+        
+        
+        
+
+    <input id="tocPaddingPerLevel" value="17" type="hidden">
+
+
+
+        <input id="MtpsDevice" value="Default" type="hidden">
+
+
+<!--[CDATA[ Third party scripts and code linked to or referenced from this website are licensed to you by the parties that own such code, not by Microsoft.  See ASP.NET Ajax CDN Terms of Use – http://www.asp.net/ajaxlibrary/CDN.ashx. ]]-->
+
+        
+        
+        
+            
+        
+
+<!--[CDATA[ WebTrends view model not available or IncludeLegacyWebTrendsScriptInGlobal feature flag is off]]-->
+
+
+
+
+<div id="globalRequestVerification">
+    <input name="__RequestVerificationToken" value="OU3M0KlBeNUaGQxVlF5gl96ZGMSQ0waoPxwbdYnv44N9CpzxRE3MsuQoMPaVZgtUSckqvkNMu8E4PJR6_93EoregjME1" type="hidden">
+</div>
+
+
+    </div>
+
+    
+    
+
+    
+
+    
+<script type="text/javascript" class="mtps-injected">
+/*<![CDATA[*/
+(function(window,document){"use strict";function preload(scripts){for(var result=[],script,e,i=0;i<scripts.length;i++)script=scripts[i],script.hasOwnProperty("url")&&(e=document.createElement("script"),e.src=script.url,script.throwaway=e),result.push(script);return result}function inject(scripts,index){var script,elem;if(index>=scripts.length){delete mtps.injectScripts;return}script=scripts[index];elem=document.createElement("script");elem.className="mtps-injected";elem.async=!1;var isLoaded=!1,timeoutId=0,injectNextFnName="",injectNext=elem.onerror=function(){isLoaded||(isLoaded=!0,inject(scripts,index+1),window.clearTimeout(timeoutId),elem.onload=elem.onerror=elem.onreadystatechange=null,injectNextFnName&&delete mtps[injectNextFnName],elem.removeEventListener&&elem.removeEventListener("load",injectNext,!1))};elem.addEventListener?elem.addEventListener("load",injectNext,!1):elem.readyState==="uninitialized"?elem.onreadystatechange=function(){(this.readyState==="loaded"||this.readyState==="complete")&&injectNext()}:elem.onload=injectNext;script.hasOwnProperty("url")?(timeoutId=window.setTimeout(injectNext,12e4),elem.src=script.url):(injectNextFnName="_injectNextScript_"+index,mtps[injectNextFnName]=injectNext,timeoutId=window.setTimeout(injectNext,2e3),elem.text="try {\n"+script.txt+"\n} finally { MTPS."+injectNextFnName+" && MTPS."+injectNextFnName+"(); }");parent.appendChild(elem)}var mtps=window.MTPS||(window.MTPS={}),parent=document.getElementsByTagName("head")[0];mtps.injectScripts=function(scripts){inject(preload(scripts),0)}})(window,document);
+MTPS.injectScripts([
+	{ txt: "/**/\r\n(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { \r\n\t\"image\": \"https://i-msdn.sec.s-msft.com\", \r\n\t\"js\": \"https://i2-msdn.sec.s-msft.com\", \r\n\t\"css\": \"https://i-msdn.sec.s-msft.com\", \r\n\t\"ttf\": \"https://i-msdn.sec.s-msft.com\"\r\n});\r\n/**/" },
+	{ txt: "//\n\n        window.appInsightsId = \u00275eb1b2eb-c47a-497a-a7ac-a1c230b2882f\u0027;\n        //" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:Utilities,1:Layout,2:Header,3:Breadcrumbs,4:LibraryRightNavigationMenu,4:PrintExportButton,5:StandardRating,2:Footer,0:Topic,3:ResponsiveSupport,0:AppInsightsPerf,3:ResponsiveToc,0:ABTestControl,4:WEDCS,3:CmpgrpForHeader,1:SearchBox;/Areas/Epx/Content/Scripts:0,/Areas/Epx/Themes/Base/Content:1,/Areas/Centers/Themes/StandardDevCenter/Content:2,/Areas/Library/Content:3,/Areas/Library/Themes/Base/Content:4,/Areas/Global/Content:5\u0026amp;hashKey=380CB181B38C487101990C8F514C8659\u0026amp;v=89652D70DF2E52DB0F2438800DF5CFB8" },
+	{ url: "https://i1.services.social.microsoft.com/search/Widgets/SearchBox.jss?boxid=HeaderSearchTextBox\u0026btnid=HeaderSearchButton\u0026minimumTermLength=2\u0026pgArea=header\u0026brand=Msdn\u0026loc=en-us\u0026focusOnInit=false\u0026emptyWatermark=true\u0026searchButtonTooltip=Search MSDN" },
+	{ url: "https://i2-msdn.sec.s-msft.com/Combined.js?resources=0:JumpRedirect,1:LibraryMemberFilter,2:Toc_Fixed,2:CodeSnippet,2:TopicNotInScope,2:VersionSelector,2:SurveyBroker;/Areas/Epx/Themes/Base/Content:0,/Areas/Library/Content:1,/Areas/Epx/Content/Scripts:2\u0026amp;hashKey=557404D276CD6AD55E74CFB084363E9D\u0026amp;v=89652D70DF2E52DB0F2438800DF5CFB8" },
+	{ txt: "$(document).ready(function() {\n        try {\n            var token = $(\"#globalRequestVerification input[name=\u0027__RequestVerificationToken\u0027]\").clone();\n            $(\"#siteFeedbackForm\").append(token);\n        } catch(err) {\n            \n        }\n    });" }
+]);
+
+/*]]>*/
+</script>
+
+</body></html>

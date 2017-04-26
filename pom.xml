@@ -8,5 +8,25 @@
     <artifactId>ant-build</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <maven.assembly.version>3.0.0</maven.assembly.version>
+    </properties>
+
+
+    <build>
+        <plugins>
+            <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-assembly-plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>${maven.assembly.version}</version>
+                <configuration>
+                    <descriptors>
+                        <descriptor>${project.basedir}/src/main/assembly/zip.xml</descriptor>
+                    </descriptors>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

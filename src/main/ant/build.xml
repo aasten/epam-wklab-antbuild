@@ -1,0 +1,101 @@
+<project name="ant-build-script" default="pack-ml-out">
+
+    <property name="temp" value="temp"/>
+    <property name="in" value="in"/>
+    <property name="out" value="out"/>
+    <property name="out-zip-name" value="out.zip"/>
+    <property name="log-dir" value="log"/>
+    <property name="logfile" value="${log-dir}/log.txt"/>
+
+    <macrodef  name="print.timestamp">
+        <attribute name="event" />
+        <sequential>
+            <tstamp>
+                <format property="current.time" pattern="yyyy/MM/dd hh:mm:ss"/>
+            </tstamp>
+            <echo message="[${current.time}] : @{event}" />
+        </sequential>
+    </macrodef>
+
+    <macrodef name="log.start">
+        <sequential>
+            <record name="${logfile}" action="start" />
+        </sequential>
+    </macrodef>
+    <macrodef name="log.stop">
+        <sequential>
+            <record name="${logfile}" action="stop" />
+        </sequential>
+    </macrodef>
+
+    <target name="prepare-logging">
+        <mkdir dir="${log-dir}" />
+    </target>
+
+    <target name="clean" depends="prepare-logging">
+        <log.start/>
+        <print.timestamp event="clean : begin"/>
+        <delete failonerror="false">
+            <fileset dir="${temp}" followsymlinks="no"/>
+            <dirset dir="${temp}" followsymlinks="no" includes="*"/>
+        </delete>
+        <print.timestamp event="clean : end"/>
+        <log.stop/>
+    </target>
+
+    <target name="create-dirs" depends="clean">
+        <log.start/>
+        <print.timestamp event="create-dirs : begin"/>
+        <parallel>
+            <mkdir dir="${temp}" />
+            <mkdir dir="${in}" />
+            <mkdir dir="${out}" />
+        </parallel>
+        <print.timestamp event="create-dirs : end"/>
+        <log.stop/>
+    </target>
+
+    <target name="fill-temp" depends="create-dirs">
+        <log.start/>
+        <print.timestamp event="fill-temp : begin"/>
+        <copy todir="${temp}">
+            <fileset dir="${in}">
+                <include name="**/*.zip"/>
+                <include name="**/*.xml"/>
+                <include name="**/*.xhtml"/>
+                <include name="**/*.html"/>
+            </fileset>
+        </copy>
+        <print.timestamp event="fill-temp : end"/>
+        <log.stop/>
+    </target>
+
+    <target name="unpack-and-remove-zip" depends="fill-temp">
+        <log.start/>
+        <print.timestamp event="unpack-and-remove-zip : begin"/>
+        <sequential>
+            <unzip dest="${temp}">
+                <fileset dir="${temp}" casesensitive="no">
+                    <include name="*.zip" />
+                </fileset>
+                <patternset includes="**/*.xml **/*.xhtml **/*.html **/*.png"/>
+                <mapper type="flatten"/>
+            </unzip>
+            <delete>
+                <fileset dir="${temp}">
+                    <include name="*.zip"/>
+                </fileset>
+            </delete>
+        </sequential>
+        <print.timestamp event="unpack-and-remove-zip : end"/>
+        <log.stop/>
+    </target>
+
+    <target name="pack-ml-out" depends="unpack-and-remove-zip">
+        <log.start/>
+        <print.timestamp event="pack-ml-out : begin"/>
+        <zip basedir="${temp}" destfile="${out}/${out-zip-name}"/>
+        <print.timestamp event="pack-ml-out : end"/>
+        <log.stop/>
+    </target>
+</project>
