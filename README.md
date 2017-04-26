@@ -8,7 +8,9 @@ Create a project with following structure:
 Apache Maven should be responsible for project packaging. 
 Project artifact should be represented as zip package, containing 
 * build.xml
+
 Hint : use assembly maven plugin and assembly descriptor.
+
 Ant build script should:
 * create in, out, temp folders
 * copy files with zip, xml, html, xhtml extensions from in to temp folder
